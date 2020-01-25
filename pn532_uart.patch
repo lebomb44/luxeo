@@ -1,0 +1,18 @@
+--- libnfc/drivers/pn532_uart.c	(unpatched)
++++ libnfc/drivers/pn532_uart.c	(patched)
+@@ -48,7 +48,7 @@
+ #include "chips/pn53x-internal.h"
+ #include "uart.h"
+ 
+-#define PN532_UART_DEFAULT_SPEED 115200
++#define PN532_UART_DEFAULT_SPEED 230400
+ #define PN532_UART_DRIVER_NAME "pn532_uart"
+ 
+ #define LOG_CATEGORY "libnfc.driver.pn532_uart"
+@@ -306,6 +306,7 @@ pn532_uart_wakeup(nfc_device *pnd)
+   const uint8_t pn532_wakeup_preamble[] = { 0x55, 0x55, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+   int res = uart_send(DRIVER_DATA(pnd)->port, pn532_wakeup_preamble, sizeof(pn532_wakeup_preamble), 0);
+   CHIP_DATA(pnd)->power_mode = NORMAL; // PN532 should now be awake
++  sleep(4);
+   return res;
+ }

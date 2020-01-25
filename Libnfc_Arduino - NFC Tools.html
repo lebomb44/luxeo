@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://nfc-tools.org/index.php/Libnfc:Arduino -->
+<html lang="en" dir="ltr" class="client-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Libnfc:Arduino - NFC Tools</title>
+
+<meta name="generator" content="MediaWiki 1.19.1">
+<link rel="shortcut icon" href="http://nfc-tools.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://nfc-tools.org/opensearch_desc.php" title="NFC Tools (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://nfc-tools.org/api.php?action=rsd">
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="NFC Tools Atom feed" href="http://nfc-tools.org/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="./Libnfc_Arduino - NFC Tools_files/load.php">
+<style type="text/css" media="all">.js-messagebox{margin:1em 5%;padding:0.5em 2.5%;border:1px solid #ccc;background-color:#fcfcfc;font-size:0.8em}.js-messagebox .js-messagebox-group{margin:1px;padding:0.5em 2.5%;border-bottom:1px solid #ddd}.js-messagebox .js-messagebox-group:last-child{border-bottom:thin none transparent}
+
+/* cache key: nfctools-wiki-db:resourceloader:filter:minify-css:7:8b08bdc91c52a9ffba396dccfb5b473c */
+
+
+.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+
+/* cache key: nfctools-wiki-db:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */
+</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="./Libnfc_Arduino - NFC Tools_files/load(1).php">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: nfctools-wiki-db:resourceloader:filter:minify-css:7:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+
+<script src="./Libnfc_Arduino - NFC Tools_files/load(2).php"></script><script src="./Libnfc_Arduino - NFC Tools_files/load(3).php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Libnfc:Arduino","wgTitle":"Libnfc:Arduino","wgCurRevisionId":918,"wgArticleId":170,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Libnfc","Libnfc:Examples"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgRelevantPageName":"Libnfc:Arduino","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;},{},{});mw.loader.implement("user.tokens",function($){mw.user.tokens.set({"editToken":"+\\","watchToken":false});;},{},{});
+
+/* cache key: nfctools-wiki-db:resourceloader:filter:minify-js:7:9983699ab6150ffa89a90653b2338ac8 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script><script type="text/javascript" src="./Libnfc_Arduino - NFC Tools_files/load(4).php"></script>
+<style type="text/css">/*<![CDATA[*/
+.source-bash {line-height: normal;}
+.source-bash li, .source-bash pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for bash
+ * CSS class: source-bash, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.bash.source-bash .de1, .bash.source-bash .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.bash.source-bash  {font-family:monospace;}
+.bash.source-bash .imp {font-weight: bold; color: red;}
+.bash.source-bash li, .bash.source-bash .li1 {font-weight: normal; vertical-align:top;}
+.bash.source-bash .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.bash.source-bash .li2 {font-weight: bold; vertical-align:top;}
+.bash.source-bash .kw1 {color: #000000; font-weight: bold;}
+.bash.source-bash .kw2 {color: #c20cb9; font-weight: bold;}
+.bash.source-bash .kw3 {color: #7a0874; font-weight: bold;}
+.bash.source-bash .co0 {color: #666666; font-style: italic;}
+.bash.source-bash .co1 {color: #800000;}
+.bash.source-bash .co2 {color: #cc0000; font-style: italic;}
+.bash.source-bash .co3 {color: #000000; font-weight: bold;}
+.bash.source-bash .co4 {color: #666666;}
+.bash.source-bash .es1 {color: #000099; font-weight: bold;}
+.bash.source-bash .es2 {color: #007800;}
+.bash.source-bash .es3 {color: #007800;}
+.bash.source-bash .es4 {color: #007800;}
+.bash.source-bash .es5 {color: #780078;}
+.bash.source-bash .es_h {color: #000099; font-weight: bold;}
+.bash.source-bash .br0 {color: #7a0874; font-weight: bold;}
+.bash.source-bash .sy0 {color: #000000; font-weight: bold;}
+.bash.source-bash .st0 {color: #ff0000;}
+.bash.source-bash .st_h {color: #ff0000;}
+.bash.source-bash .nu0 {color: #000000;}
+.bash.source-bash .re0 {color: #007800;}
+.bash.source-bash .re1 {color: #007800;}
+.bash.source-bash .re2 {color: #007800;}
+.bash.source-bash .re4 {color: #007800;}
+.bash.source-bash .re5 {color: #660033;}
+.bash.source-bash .ln-xtra, .bash.source-bash li.ln-xtra, .bash.source-bash div.ln-xtra {background-color: #ffc;}
+.bash.source-bash span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-diff {line-height: normal;}
+.source-diff li, .source-diff pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for diff
+ * CSS class: source-diff, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.diff.source-diff .de1, .diff.source-diff .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.diff.source-diff  {font-family:monospace;}
+.diff.source-diff .imp {font-weight: bold; color: red;}
+.diff.source-diff li, .diff.source-diff .li1 {font-weight: normal; vertical-align:top;}
+.diff.source-diff .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.diff.source-diff .li2 {font-weight: bold; vertical-align:top;}
+.diff.source-diff .kw1 {color: #aaaaaa; font-style: italic;}
+.diff.source-diff .re0 {color: #440088;}
+.diff.source-diff .re1 {color: #991111;}
+.diff.source-diff .re2 {color: #00b000;}
+.diff.source-diff .re3 {color: #888822;}
+.diff.source-diff .re4 {color: #888822;}
+.diff.source-diff .re5 {color: #0011dd;}
+.diff.source-diff .re6 {color: #440088;}
+.diff.source-diff .re7 {color: #991111;}
+.diff.source-diff .re8 {color: #00b000;}
+.diff.source-diff .re9 {color: #888822;}
+.diff.source-diff .ln-xtra, .diff.source-diff li.ln-xtra, .diff.source-diff div.ln-xtra {background-color: #ffc;}
+.diff.source-diff span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-ini {line-height: normal;}
+.source-ini li, .source-ini pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for ini
+ * CSS class: source-ini, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.ini.source-ini .de1, .ini.source-ini .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.ini.source-ini  {font-family:monospace;}
+.ini.source-ini .imp {font-weight: bold; color: red;}
+.ini.source-ini li, .ini.source-ini .li1 {font-weight: normal; vertical-align:top;}
+.ini.source-ini .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.ini.source-ini .li2 {font-weight: bold; vertical-align:top;}
+.ini.source-ini .co0 {color: #666666; font-style: italic;}
+.ini.source-ini .sy0 {color: #000066; font-weight:bold;}
+.ini.source-ini .st0 {color: #933;}
+.ini.source-ini .re0 {color: #000066; font-weight:bold;}
+.ini.source-ini .re1 {color: #000099;}
+.ini.source-ini .re2 {color: #660066;}
+.ini.source-ini .ln-xtra, .ini.source-ini li.ln-xtra, .ini.source-ini div.ln-xtra {background-color: #ffc;}
+.ini.source-ini span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-c {line-height: normal;}
+.source-c li, .source-c pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: source-c, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c.source-c .de1, .c.source-c .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.c.source-c  {font-family:monospace;}
+.c.source-c .imp {font-weight: bold; color: red;}
+.c.source-c li, .c.source-c .li1 {font-weight: normal; vertical-align:top;}
+.c.source-c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c.source-c .li2 {font-weight: bold; vertical-align:top;}
+.c.source-c .kw1 {color: #b1b100;}
+.c.source-c .kw2 {color: #000000; font-weight: bold;}
+.c.source-c .kw3 {color: #000066;}
+.c.source-c .kw4 {color: #993333;}
+.c.source-c .co1 {color: #666666; font-style: italic;}
+.c.source-c .co2 {color: #339933;}
+.c.source-c .coMULTI {color: #808080; font-style: italic;}
+.c.source-c .es0 {color: #000099; font-weight: bold;}
+.c.source-c .es1 {color: #000099; font-weight: bold;}
+.c.source-c .es2 {color: #660099; font-weight: bold;}
+.c.source-c .es3 {color: #660099; font-weight: bold;}
+.c.source-c .es4 {color: #660099; font-weight: bold;}
+.c.source-c .es5 {color: #006699; font-weight: bold;}
+.c.source-c .br0 {color: #009900;}
+.c.source-c .sy0 {color: #339933;}
+.c.source-c .st0 {color: #ff0000;}
+.c.source-c .nu0 {color: #0000dd;}
+.c.source-c .nu6 {color: #208080;}
+.c.source-c .nu8 {color: #208080;}
+.c.source-c .nu12 {color: #208080;}
+.c.source-c .nu16 {color:#800080;}
+.c.source-c .nu17 {color:#800080;}
+.c.source-c .nu18 {color:#800080;}
+.c.source-c .nu19 {color:#800080;}
+.c.source-c .me1 {color: #202020;}
+.c.source-c .me2 {color: #202020;}
+.c.source-c .ln-xtra, .c.source-c li.ln-xtra, .c.source-c div.ln-xtra {background-color: #ffc;}
+.c.source-c span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Libnfc_Arduino skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content" class="mw-body">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;" class="js-messagebox"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">
+				<span dir="auto">Libnfc:Arduino</span>
+			</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+								<!-- tagline -->
+				<div id="siteSub">From NFC Tools</div>
+				<!-- /tagline -->
+								<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav" class="mw-jump">
+					Jump to: <a href="http://nfc-tools.org/index.php/Libnfc:Arduino#mw-head">navigation</a>,
+					<a href="http://nfc-tools.org/index.php/Libnfc:Arduino#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodycontent -->
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><b>How to use a PN532 board with Arduino to make a reader compatible with libnfc</b>
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="http://nfc-tools.org/index.php/Libnfc:Arduino#" class="internal" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="http://nfc-tools.org/index.php/Libnfc:Arduino#Prepare_Libnfc"><span class="tocnumber">1</span> <span class="toctext">Prepare Libnfc</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="http://nfc-tools.org/index.php/Libnfc:Arduino#Prepare_Arduino"><span class="tocnumber">2</span> <span class="toctext">Prepare Arduino</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="http://nfc-tools.org/index.php/Libnfc:Arduino#Prepare_hardware"><span class="tocnumber">3</span> <span class="toctext">Prepare hardware</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="http://nfc-tools.org/index.php/Libnfc:Arduino#Test"><span class="tocnumber">4</span> <span class="toctext">Test</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="http://nfc-tools.org/index.php/Libnfc:Arduino#Links"><span class="tocnumber">5</span> <span class="toctext">Links</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h1> <span class="mw-headline" id="Prepare_Libnfc">Prepare Libnfc</span></h1>
+<p>Download libnfc 1.7.1
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">git clone</span> https:<span class="sy0">//</span>github.com<span class="sy0">/</span>nfc-tools<span class="sy0">/</span>libnfc.git
+<span class="kw3">cd</span> libnfc
+<span class="kw2">git checkout</span> libnfc-1.7.1</pre></div></div>
+<p>Download this <a rel="nofollow" class="external text" href="http://nfc-tools.org/index.php?title=Libnfc:Arduino&amp;action=raw&amp;anchor=pn532_uart.patch">patch</a>:
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="diff source-diff"><pre class="de1"><span class="re3">--- libnfc/drivers/pn532_uart.c	<span class="br0">(</span>unpatched<span class="br0">)</span></span>
+<span class="re4">+++ libnfc/drivers/pn532_uart.c	<span class="br0">(</span>patched<span class="br0">)</span></span>
+<span class="re6">@@ -48,7 +48,7 @@</span>
+ #include "chips/pn53x-internal.h"
+ #include "uart.h"
+&nbsp;
+<span class="re7">-#define PN532_UART_DEFAULT_SPEED 115200</span>
+<span class="re8">+#define PN532_UART_DEFAULT_SPEED 230400</span>
+ #define PN532_UART_DRIVER_NAME "pn532_uart"
+&nbsp;
+ #define LOG_CATEGORY "libnfc.driver.pn532_uart"
+<span class="re6">@@ -306,6 +306,7 @@ pn532_uart_wakeup<span class="br0">(</span>nfc_device *pnd<span class="br0">)</span></span>
+   const uint8_t pn532_wakeup_preamble<span class="br0">[</span><span class="br0">]</span> = <span class="br0">{</span> 0x55, 0x55, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 <span class="br0">}</span>;
+   int res = uart_send<span class="br0">(</span>DRIVER_DATA<span class="br0">(</span>pnd<span class="br0">)</span>-&gt;port, pn532_wakeup_preamble, sizeof<span class="br0">(</span>pn532_wakeup_preamble<span class="br0">)</span>, <span class="nu0">0</span><span class="br0">)</span>;
+   CHIP_DATA<span class="br0">(</span>pnd<span class="br0">)</span>-&gt;power_mode = NORMAL; // PN532 should now be awake
+<span class="re8">+  sleep<span class="br0">(</span><span class="nu0">4</span><span class="br0">)</span>;</span>
+   return res;
+ <span class="br0">}</span></pre></div></div>
+<p>This can be done with
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">wget</span> <span class="re5">--content-disposition</span> <span class="st0">"http://nfc-tools.org/index.php?title=Libnfc:Arduino&amp;action=raw&amp;anchor=pn532_uart.patch"</span></pre></div></div>
+<p>Then apply it:
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">patch</span> <span class="re5">-p0</span> <span class="sy0">&lt;</span> pn532_uart.patch</pre></div></div>
+<p>Compile with pn532_uart driver (or all drivers if you remove "--with-drivers=..."):
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="bash source-bash"><pre class="de1">autoreconf <span class="re5">-vis</span>
+.<span class="sy0">/</span>configure <span class="re5">--with-drivers</span>=pn532_uart <span class="re5">--sysconfdir</span>=<span class="sy0">/</span>etc <span class="re5">--prefix</span>=<span class="sy0">/</span>usr
+<span class="kw2">make</span> clean all</pre></div></div>
+<p>and install it on your system:
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">sudo</span> <span class="kw2">make</span> <span class="kw2">install</span></pre></div></div>
+<p>(if libnfc was installed before, it should be deleted before installing it)
+</p><p>Set configuration by creating /etc/nfc/<a rel="nofollow" class="external text" href="http://nfc-tools.org/index.php?title=Libnfc:Arduino&amp;action=raw&amp;anchor=libnfc.conf">libnfc.conf</a> as
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="ini source-ini"><pre class="de1"># Allow device auto-detection <span class="br0">(</span>default: true<span class="br0">)</span>
+# Note: if this auto-detection is disabled, user has to set manually a device
+# configuration using file or environment variable
+<span class="re1">allow_autoscan</span> <span class="sy0">=</span><span class="re2"> false</span>
+&nbsp;
+# Allow intrusive auto-detection <span class="br0">(</span>default: false<span class="br0">)</span>
+# Warning: intrusive auto-detection can seriously disturb other devices
+# This option is not recommended, user should prefer to add manually his device.
+<span class="re1">allow_intrusive_scan</span> <span class="sy0">=</span><span class="re2"> false</span>
+&nbsp;
+# Set log level <span class="br0">(</span>default: error<span class="br0">)</span>
+# Valid log levels are <span class="br0">(</span>in order of verbosity<span class="br0">)</span>: <span class="nu0">0</span> <span class="br0">(</span>none<span class="br0">)</span>, <span class="nu0">1</span> <span class="br0">(</span>error<span class="br0">)</span>, <span class="nu0">2</span> <span class="br0">(</span>info<span class="br0">)</span>, <span class="nu0">3</span> <span class="br0">(</span>debug<span class="br0">)</span>
+# Note: if you compiled with --enable-debug option, the default log level is <span class="st0">"debug"</span>
+<span class="re1">log_level</span> <span class="sy0">=</span><span class="re2"> 2</span>
+&nbsp;
+# Manually set default device <span class="br0">(</span>no default<span class="br0">)</span>
+# To set a default device, you must set both name and connstring for your device
+# Note: if autoscan is enabled, default device will be the first device available in device list.
+device.name <span class="sy0">=</span> <span class="st0">"PN532 NFC Board on Arduino"</span>
+device.connstring <span class="sy0">=</span> <span class="st0">"pn532_uart:/dev/ttyACM0:230400"</span></pre></div></div>
+<p><br>
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">sudo</span> <span class="kw2">mkdir</span> <span class="re5">-p</span> <span class="sy0">/</span>etc<span class="sy0">/</span>nfc<span class="sy0">/</span>devices.d
+<span class="kw3">cd</span> <span class="sy0">/</span>etc<span class="sy0">/</span>nfc<span class="sy0">/</span>
+<span class="kw2">wget</span> <span class="re5">--content-disposition</span> <span class="st0">"http://nfc-tools.org/index.php?title=Libnfc:Arduino&amp;action=raw&amp;anchor=libnfc.conf"</span></pre></div></div>
+<p>All above steps are available in <a rel="nofollow" class="external text" href="http://nfc-tools.org/index.php?title=Libnfc:Arduino&amp;action=raw&amp;anchor=libnfc_arduino.sh">this script libnfc_arduino.sh</a>
+</p><p>Check if <b>/dev/ttyACM0</b> is well your Arduino port, else adapt this script.
+</p>
+<h1> <span class="mw-headline" id="Prepare_Arduino">Prepare Arduino</span></h1>
+<p>Download:
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">svn checkout</span> http:<span class="sy0">//</span>mfocuino.googlecode.com<span class="sy0">/</span>svn<span class="sy0">/</span>trunk<span class="sy0">/</span>nfcreader<span class="sy0">/</span>arduino<span class="sy0">/</span> uartnfc
+<span class="kw3">cd</span> uartnfc</pre></div></div>
+<p>now you have the lib and the sketch for your arduino&nbsp;:)
+</p><p>Change baudrate in the <b>uartnfc.ino</b> file to 230400:
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="c source-c"><pre class="de1"><span class="kw4">void</span> setup<span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span>
+<span class="br0">{</span>
+  Serial.<span class="me1">begin</span><span class="br0">(</span><span class="nu0">230400</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">//115200, 230400(, 460800, 921600)</span>
+  Serial.<span class="me1">flush</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+  nfc.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>Upload the sketch to the Arduino, e.g. via the Arduino IDE.
+</p>
+<h1> <span class="mw-headline" id="Prepare_hardware">Prepare hardware</span></h1>
+<p>Check if your PN532 board needs some soldering to activate the SPI, then wire it to the Arduino as following:
+</p>
+<pre> Arduino       PN532 board (SPI)
+ Pin 13  &lt;--&gt;  SCK
+ Pin 12  &lt;--&gt;  MISO
+ Pin 11  &lt;--&gt;  MOSI (/SDA/TX)
+ Pin 10  &lt;--&gt;  SS   (/NSS/SCL/RX)
+ GND     &lt;--&gt;  GND
+ 3,3V    &lt;--&gt;  3,3V (VCC)
+</pre>
+<h1> <span class="mw-headline" id="Test">Test</span></h1>
+<pre>root@kali:~# nfc-list
+nfc-list uses libnfc libnfc-1.7.0-91-g491db20
+NFC device: pn532_uart:/dev/ttyACM0 opened
+1 ISO14443A passive target(s) found:
+ISO/IEC 14443A (106 kbps) target:
+    ATQA (SENS_RES): 00  04  
+       UID (NFCID1): a5  09  fd  e5  
+      SAK (SEL_RES): 08  
+</pre>
+<h1> <span class="mw-headline" id="Links">Links</span></h1>
+<ul><li> <a rel="nofollow" class="external free" href="http://code.google.com/p/mfocuino/">http://code.google.com/p/mfocuino/</a>
+</li><li> <a rel="nofollow" class="external free" href="http://www.libnfc.org/community/topic/1169/how-to-connect-a-pn532-nfc-modul-to-an-arduino-to-use-libnfc-with-it/">http://www.libnfc.org/community/topic/1169/how-to-connect-a-pn532-nfc-modul-to-an-arduino-to-use-libnfc-with-it/</a>
+</li><li> <a rel="nofollow" class="external free" href="http://regnerischernachmittag.wordpress.com/2013/05/13/libnfc-mit-arduino-nfc-shield-nutzen/">http://regnerischernachmittag.wordpress.com/2013/05/13/libnfc-mit-arduino-nfc-shield-nutzen/</a> (german)
+</li><li> <a rel="nofollow" class="external free" href="http://robospatula.blogspot.de/2014/01/configure-install-libnfc-linux-PN532-breakout-board.html">http://robospatula.blogspot.de/2014/01/configure-install-libnfc-linux-PN532-breakout-board.html</a>
+</li><li> <a rel="nofollow" class="external free" href="http://www.elechouse.com/elechouse/index.php?main_page=product_info&amp;cPath=90_93&amp;products_id=2205">http://www.elechouse.com/elechouse/index.php?main_page=product_info&amp;cPath=90_93&amp;products_id=2205</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 136/1000000
+Post-expand include size: 254/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key nfctools-wiki-db:pcache:idhash:170-0!*!*!!en!*!* and timestamp 20200123204203 -->
+</div>				<!-- /bodycontent -->
+								<!-- printfooter -->
+				<div class="printfooter">
+				Retrieved from "<a href="http://nfc-tools.org/index.php?title=Libnfc:Arduino&amp;oldid=918">http://nfc-tools.org/index.php?title=Libnfc:Arduino&amp;oldid=918</a>"				</div>
+				<!-- /printfooter -->
+												<!-- catlinks -->
+				<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://nfc-tools.org/index.php/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="http://nfc-tools.org/index.php/Category:Libnfc" title="Category:Libnfc">Libnfc</a></li><li><a href="http://nfc-tools.org/index.php/Category:Libnfc:Examples" title="Category:Libnfc:Examples">Libnfc:Examples</a></li></ul></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+				<!-- debughtml -->
+								<!-- /debughtml -->
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+		<li id="pt-login"><a href="http://nfc-tools.org/index.php?title=Special:UserLogin&amp;returnto=Libnfc%3AArduino" title="You are encouraged to log in; however, it is not mandatory [alt-o]" accesskey="o">Log in / create account</a></li>
+	</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="http://nfc-tools.org/index.php/Libnfc:Arduino" title="View the content page [alt-c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="new"><span><a href="http://nfc-tools.org/index.php?title=Talk:Libnfc:Arduino&amp;action=edit&amp;redlink=1" title="Discussion about the content page [alt-t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+	<h4>
+		</h4>
+	<h5><span>Variants</span><a href="http://nfc-tools.org/index.php/Libnfc:Arduino#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://nfc-tools.org/index.php/Libnfc:Arduino">Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://nfc-tools.org/index.php?title=Libnfc:Arduino&amp;action=edit" title="This page is protected.
+You can view its source [alt-e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://nfc-tools.org/index.php?title=Libnfc:Arduino&amp;action=history" title="Past revisions of this page [alt-h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="http://nfc-tools.org/index.php/Libnfc:Arduino#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="http://nfc-tools.org/index.php" id="searchform">
+				<div>
+			<input type="search" name="search" title="Search NFC Tools [alt-f]" accesskey="f" id="searchInput">			<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton">			<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton">					<input type="hidden" name="title" value="Special:Search">
+		</div>
+	</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(/images/swiss_nfc.png);" href="http://nfc-tools.org/index.php/Main_Page" title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id="p-navigation">
+	<h5>Navigation</h5>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://nfc-tools.org/index.php/Main_Page" title="Visit the main page [alt-z]" accesskey="z">Main page</a></li>
+			<li id="n-portal"><a href="http://www.libnfc.org/community" rel="nofollow" title="About the project, what you can do, where to find things">Community portal</a></li>
+			<li id="n-recentchanges"><a href="http://nfc-tools.org/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [alt-r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://nfc-tools.org/index.php/Special:Random" title="Load a random page [alt-x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="http://nfc-tools.org/index.php/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- Documentation -->
+<div class="portal" id="p-Documentation">
+	<h5>Documentation</h5>
+	<div class="body">
+		<ul>
+			<li id="n-Hardware"><a href="http://nfc-tools.org/index.php/Category:Hardware">Hardware</a></li>
+			<li id="n-Software"><a href="http://nfc-tools.org/index.php/Category:Software">Software</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /Documentation -->
+
+<!-- Misc -->
+<div class="portal" id="p-Misc">
+	<h5>Misc</h5>
+	<div class="body">
+		<ul>
+			<li id="n-Sponsors"><a href="http://nfc-tools.org/index.php/Sponsors">Sponsors</a></li>
+			<li id="n-Contact-us"><a href="http://nfc-tools.org/index.php/Contact">Contact us</a></li>
+			<li id="n-Related-links"><a href="http://nfc-tools.org/index.php/Related_links">Related links</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /Misc -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://nfc-tools.org/index.php/Special:WhatLinksHere/Libnfc:Arduino" title="A list of all wiki pages that link here [alt-j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://nfc-tools.org/index.php/Special:RecentChangesLinked/Libnfc:Arduino" title="Recent changes in pages linked from this page [alt-k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://nfc-tools.org/index.php/Special:SpecialPages" title="A list of all special pages [alt-q]" accesskey="q">Special pages</a></li>
+			<li><a href="http://nfc-tools.org/index.php?title=Libnfc:Arduino&amp;printable=yes" rel="alternate">Printable version</a></li>
+			<li id="t-permalink"><a href="http://nfc-tools.org/index.php?title=Libnfc:Arduino&amp;oldid=918" title="Permanent link to this revision of the page">Permanent link</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 6 January 2017, at 09:24.</li>
+											<li id="footer-info-viewcount">This page has been accessed 58,917 times.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a>.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://nfc-tools.org/index.php/NFC_Tools:Privacy_policy" title="NFC Tools:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://nfc-tools.org/index.php/NFC_Tools:About" title="NFC Tools:About">About NFC Tools</a></li>
+											<li id="footer-places-disclaimer"><a href="http://nfc-tools.org/index.php/NFC_Tools:General_disclaimer" title="NFC Tools:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://www.gnu.org/copyleft/fdl.html"><img src="./Libnfc_Arduino - NFC Tools_files/gnu-fdl.png" alt="GNU Free Documentation License 1.3 or later" width="88" height="31"></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="./Libnfc_Arduino - NFC Tools_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		<script src="./Libnfc_Arduino - NFC Tools_files/load(5).php"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.user","mediawiki.page.ready"], null, true);
+}</script><script src="./Libnfc_Arduino - NFC Tools_files/load(6).php" type="text/javascript"></script>
+<script src="./Libnfc_Arduino - NFC Tools_files/load(7).php"></script>
+<!-- Served in 0.152 secs. -->
+	
+
+</body></html>
