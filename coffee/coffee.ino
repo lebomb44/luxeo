@@ -10,12 +10,14 @@ PN532 nfc(pn532spi);
 uint8_t nfcUID[7] = { 0, 0, 0, 0, 0, 0, 0 };
 uint8_t nfcUIDLength = 0;
 String nfcUIDs = "";
-uint8_t nfcKey[6] = { 0x41, 0x5A, 0x54, 0x45, 0x4B, 0x4D };
+// uint8_t nfcKey[6] = { 0x41, 0x5A, 0x54, 0x45, 0x4B, 0x4D };
+ uint8_t nfcKey[6] = { 0xD2, 0xAE, 0xFA, 0xA5, 0xE3, 0x40 };
 uint8_t errorNb = 0;
 
 class T_TAG {
 public:
   String uid;
+  String key;
   String block36;
   String block37;
   String block38;
@@ -32,6 +34,7 @@ void init_allTags(void) {
   T_TAG * tag = NULL;
   tag = &allTags[0];
   tag->uid = String("25D563EC000000");
+  tag->key = String("D2AEFAA5E340");
   tag->block36 = String("F0023832B41FFC81C1AF34BEF8226C76");
   tag->block37 = String("E020717650F2D593E020717650F2D593");
   tag->block38 = String("D4B89D54703564C2F69C002CC2F2C838");
@@ -42,14 +45,15 @@ void init_allTags(void) {
   tag->block45 = String("ED60075C61370AB377920F577569897D");
   tag = &allTags[1];
   tag->uid = String("F1EE3D25000000");
-  tag->block36 = String("0FB650669C1740FEFFDB21B18E5BCD1C");
-  tag->block37 = String("649AF198AA004C6C2AED16BA1537D106");
-  tag->block38 = String("B0D2D23353FDC6BDB05DF0E29BB74E2B");
-  tag->block40 = String("21DFAE40990044D9B5B9B20318DCAF6E");
-  tag->block41 = String("EC8200DDBAC2B612FFDB21B18E5BCD1C");
-  tag->block42 = String("351C7F2C12AADE2C2AED16BA1537D106");
-  tag->block44 = String("B0D2D23353FDC6BDB05DF0E29BB74E2B");
-  tag->block45 = String("21DFAE40990044D9581A1A07CDEC5744");
+  tag->key = String("1F8E89A0D7C7");
+  tag->block36 = String("68912EEDC14A8096803E24BAF1404C71");
+  tag->block37 = String("F7A0BDBF500B7AD02AED16BA1537D106");
+  tag->block38 = String("B0D2D23353FDC6BD1C2C42650435DD74");
+  tag->block40 = String("21DFAE40990044D9C9B5323C97313A82");
+  tag->block41 = String("7C14A58D83C7C0737A14ED8DCD2ED7DF");
+  tag->block42 = String("AEE0BA8594B2A7C72AED16BA1537D106");
+  tag->block44 = String("B0D2D23353FDC6BD1C2C42650435DD74");
+  tag->block45 = String("21DFAE40990044D98EB73C82255E7A82");
 }
 
 void setup() {
@@ -108,6 +112,9 @@ void loop() {
     }
   }
   if(NULL != tag) {
+    for(uint8_t i=0; i<(sizeof(nfcKey)/sizeof(nfcKey[0])); i++) {
+      nfcKey[i] = strtoul((String(tag->key.charAt(2*i)) + String(tag->key.charAt((2*i)+1))).c_str(), NULL, 16);
+    }
     Serial.println(F("#### BLOCKS 36 -> 39 ####"));
     //nfcKey[0] = 0x41; nfcKey[1] = 0x5A; nfcKey[2] = 0x54; nfcKey[3] = 0x45; nfcKey[4] = 0x4B; nfcKey[5] = 0x4D;
     if(1 == nfc.mifareclassic_AuthenticateBlock(nfcUID, nfcUIDLength, 36, 1, nfcKey)) {
